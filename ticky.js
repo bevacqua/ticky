@@ -1,7 +1,7 @@
 var si = typeof setImmediate === 'function', tick;
 if (si) {
   tick = function (fn) { setImmediate(fn); };
-} else if (typeof process !== undef && process.nextTick) {
+} else if (typeof process !== 'undefined' && process.nextTick) {
   tick = process.nextTick;
 } else {
   tick = function (fn) { setTimeout(fn, 0); };
